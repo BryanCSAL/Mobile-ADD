@@ -2,6 +2,7 @@ import { View, Text } from 'react-native';
 import React, { useState } from 'react';
 
 import Button from './components/button';
+import MinusButton from './components/minusButton';
 
 var thisNum = 0;
 
@@ -10,6 +11,10 @@ export default function App() {
 
   const handlePress = () => {
      thisNum = thisNum + 1;
+    setNum(thisNum);
+  };
+  const handlePressMinus = () => {
+     thisNum = thisNum - 1;
     setNum(thisNum);
   };
 
@@ -21,6 +26,7 @@ export default function App() {
       
       <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 30 }}>
         <Button onPress={handlePress} />
+        <MinusButton onPress={handlePressMinus} />
       </View>
     </View>
   );
